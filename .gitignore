@@ -2,9 +2,10 @@
 node_modules/
 
 # Build output
-dist/style.css
 
-src/assets
+
+# Asset sources
+src/assets/
 
 # Environment files
 .env

@@ -1,0 +1,91 @@
+@import url("https://fonts.googleapis.com/css2?family=Boldonse&family=Bytesized&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Quicksand:wght@300..700&family=Space+Grotesk:wght@300..700&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap");
+@import "tailwindcss";
+
+@theme {
+	--font-main: "Poppins", sans-serif;
+}
+@layer components {
+	.slider {
+		@apply w-full h-2 bg-gradient-to-r from-red-300 via-purple-400
+		to-green-500 rounded-lg appearance-none cursor-grab outline-none
+		shadow-md transition-all duration-300
+		ease-[cubic-bezier(0.33,1,0.68,1)]
+		[&::-webkit-slider-thumb]:appearance-none
+		[&::-webkit-slider-thumb]:h-4 [&::-webkit-slider-thumb]:w-4
+		[&::-webkit-slider-thumb]:rounded-md
+		[&::-webkit-slider-thumb]:bg-zinc-700
+		[&::-webkit-slider-thumb]:shadow-xl
+		[&::-webkit-slider-thumb]:ring-2
+		[&::-webkit-slider-thumb]:ring-sky-400
+		[&::-webkit-slider-thumb]:transition-all
+		[&::-webkit-slider-thumb]:duration-300
+		[&::-webkit-slider-thumb]:ease-[cubic-bezier(0.33,1,0.68,1)]
+		[&::-webkit-slider-thumb]:active:scale-125
+		[&::-webkit-slider-thumb]:active:shadow-2xl
+		[&::-moz-range-thumb]:h-4 [&::-moz-range-thumb]:w-4
+		[&::-moz-range-thumb]:rounded-full
+		[&::-moz-range-thumb]:bg-zinc-700 [&::-moz-range-thumb]:shadow-xl
+		[&::-moz-range-thumb]:border-none
+		[&::-moz-range-thumb]:transition-all
+		[&::-moz-range-thumb]:duration-300
+		[&::-moz-range-thumb]:active:scale-125;
+	}
+	.input-field {
+		@apply h-full w-full outline-4 outline-sky-400 rounded-md p-4 font-main text-amber-50 text-lg bg-zinc-950 selection:bg-sky-300 selection:text-zinc-800;
+	}
+	.copy-btn {
+		@apply absolute right-2 text-sky-300 hover:text-sky-200 hover:scale-[1.4] active:scale-[1] active:text-sky-400 transition  duration-[300ms] ease-linear cursor-pointer;
+	}
+	.notification {
+		@apply absolute top-0 left-[50%] transform -translate-x-1/2 bg-zinc-950 p-2 rounded-bl-md rounded-br-md hidden items-center justify-center gap-2 shadow-lg shadow-sky-400;
+	}
+	.custom-checkbox {
+		@apply cursor-pointer relative inline-flex h-5 w-9 sm:h-6 sm:w-11 items-center rounded-lg transition-all duration-300 ease-[cubic-bezier(0.33,1,0.68,1)] bg-zinc-700 shadow-inner
+		border-none after:content-[''] after:absolute after:left-[2px] after:h-4 after:w-4 sm:after:h-5 sm:after:w-5 after:rounded-lg after:bg-zinc-900 after:shadow-sm after:transition-all after:duration-300 
+		peer-checked:bg-sky-400 peer-checked:after:translate-x-4 sm:peer-checked:after:translate-x-5;
+	}
+	.custom-checkbox-text {
+		@apply font-main text-amber-50 text-[min(3.5vw,1.5rem)] select-none;
+	}
+	.generate-btn {
+		@apply w-full bg-sky-400 text-white text-[min(5vw,1.5rem)] font-semibold font-main rounded-md py-2 shadow-md shadow-sky-400 hover:tracking-widest active:scale-[0.9] transition-all duration-300 ease-[cubic-bezier(0.33,1,0.68,1)] cursor-pointer;
+	}
+}
+html,
+body {
+	height: 100%;
+	width: 100%;
+	-ms-overflow-style: none;
+	scrollbar-width: none;
+}
+body::-webkit-scrollbar {
+	display: none;
+}
+.svg-logo {
+	/* Container styles */
+	display: block;
+	margin: 0 auto;
+	overflow: visible;
+}
+svg path {
+	fill: transparent;
+	stroke: rgba(70, 230, 255, 0.8);
+	stroke-width: 4;
+	stroke-dasharray: 400;
+	stroke-dashoffset: 400;
+	animation: dash 4s ease-in-out 1 forwards;
+	filter: drop-shadow(0 0 15px rgba(30, 225, 255, 0.8)) /* First shadow */
+		drop-shadow(0 0 30px rgba(30, 180, 255, 0.5)); /* Second shadow */
+}
+@keyframes dash {
+	0% {
+		stroke-dashoffset: 400;
+	}
+	80% {
+		fill: transparent;
+	}
+	100% {
+		fill: rgba(70, 230, 255, 0.8);
+		stroke-dashoffset: 0;
+	}
+}

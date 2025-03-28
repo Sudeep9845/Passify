@@ -2,7 +2,7 @@
 node_modules/
 
 # Build output
-dist/output.css
+dist/
 
 # Environment files
 .env
